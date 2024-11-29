@@ -1,5 +1,3 @@
-[![Build](https://github.com/algo3-unsam/readapp-2024-grupo-10/actions/workflows/build.yml/badge.svg)](https://github.com/algo3-unsam/readapp-2024-grupo-10/actions/workflows/build.yml) ![Coverage](./badges/readapp-grupo-10/coverage.svg)
-
 # ReadApp - frontend
 
 ## Entrega #1
