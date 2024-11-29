@@ -1,0 +1,44 @@
+<main class="wrapper">
+    <section class="contenedor">
+        <form action="" class="contenedor-contenido" (keydown.enter)="login()">
+            <figure class="contenedor-contenido-titulo">
+                <img src="../logo_login.svg" alt="logo login" />
+                <p>ReadApp</p>
+            </figure>
+            <div class="contenedor-contenido-inputs">
+                <label for="username">Username <span class="requerido">*</span></label>
+                <input 
+                type="text" 
+                id="username" 
+                name="username"
+                [(ngModel)]="usuario.username" 
+                placeholder="Ingrese username"
+                autocomplete="off" >
+            </div>
+            <div class="contenedor-contenido-inputs">
+                <label for="password">Password <span class="requerido">*</span></label>
+                <input 
+                [type]="passwordVisible ? 'text' : 'password'"
+                id="password" 
+                name="password"
+                [(ngModel)]="usuario.password" 
+                placeholder="Ingrese password">
+                <div class="password-icono">
+                    <img
+                    class="icono-ojo"
+                    [src]="passwordVisible ? '../ojo-abierto.svg' : '../ojo-cerrado.svg'"
+                    (click)="visibilidadPassword()">
+                </div>
+            </div>
+            <p><span class="requerido">*</span> Campos obligatorios</p>
+            <readapp-boton-primario 
+            [verLogin]="true" 
+            (click)="login()"
+            [ngClass]="{ 'disabled-button': !usuario.username || !usuario.password }">
+            </readapp-boton-primario>
+        </form>
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
+    </section>
+</main>

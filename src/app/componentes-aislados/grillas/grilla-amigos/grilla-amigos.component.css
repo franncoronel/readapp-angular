@@ -1,0 +1,16 @@
+.contenedor-grilla {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 0.5rem;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  }
+
+
+  

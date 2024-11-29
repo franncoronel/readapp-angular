@@ -1,0 +1,317 @@
+.contenido-pestaña {
+  width: 100%;
+  margin: 0.5rem 1.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contenedor-botones {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 0.5rem;
+  padding: 1rem;
+}
+
+.contenido-pestaña hr {
+  padding: 0.01rem;
+}
+
+/* Grilla para input de datos personales */
+
+.grilla-datos {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'nombre apellido'
+    'username nacimiento'
+    'mail palabras-por-minuto';
+  /* Esta propiedad permite plasmar el mapa mental que tenés de la distribución de las filas y columnas. Luego de declarar el nombre de cada sección, se debe crear una clase para esa sección y agregarle la propiedad grid-area con el nombre correspondiente.*/
+  gap: 1rem;
+}
+
+.grilla-datos > .entrada {
+  cursor: text;
+}
+
+.grilla-datos > .entrada > input {
+  cursor: text;
+}
+
+.titulo-seccion {
+  font-size: 1.4em;
+  display: flex;
+  gap: 0.5em;
+}
+
+.entrada {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.entrada input {
+  border-radius: 0.4rem;
+  border: 0.125em solid var(--color-bordes);
+  height: 3em;
+  padding-left: 0.5rem;
+  -webkit-transition: 0.5s;
+  transition: border 0.5s;
+  outline: none;
+}
+
+.entrada input:focus-visible {
+  border: 0.125em solid black;
+}
+
+.entrada-nombre {
+  grid-area: nombre;
+}
+
+.entrada-apellido {
+  grid-area: apellido;
+}
+
+.entrada-username {
+  grid-area: username;
+}
+
+.entrada-nacimiento {
+  grid-area: nacimiento;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+.entrada-nacimiento > input {
+  padding-right: 0.5rem;
+}
+
+.entrada-mail {
+  grid-area: mail;
+}
+
+.entrada-palabras-por-minuto {
+  grid-area: palabras-por-minuto;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  opacity: 1;
+  height: 3em;
+  cursor: pointer;
+}
+
+/* Sección de botones radiales para forma de lectura */
+
+.contenido-pestaña label,
+input {
+  cursor: pointer;
+}
+
+.flex-lectura {
+  display: flex;
+  align-content: center;
+  margin-left: 0.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* grid-template-rows: min-content;
+    grid-template-columns: repeat(4, 1fr); */
+  flex-grow: 0.2;
+  flex-shrink: 2;
+}
+
+.seleccion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  accent-color: black;
+}
+
+/* Sección de checkboxes para definir criterio de búsqueda */
+
+.contenedor-criterio {
+  display: flex;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.grilla-busqueda {
+  display: grid;
+  margin-left: 1rem;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 2fr 2fr 0.5fr;
+  grid-template-areas:
+    'precavido demandante cambiante'
+    'leedor nativista .' /*Los puntos en esta definición de template areas representan las celdas vacías. */
+    'políglota experimentado calculador'; /*Si no aclaro cuales celdas van a estar vacías, la propiedad no funciona */
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: column;
+  flex-grow: 4;
+}
+
+.grilla-busqueda > .titulo-seccion {
+  grid-area: titulo;
+}
+
+.precavido {
+  grid-area: precavido;
+}
+.demandante {
+  grid-area: demandante;
+}
+.cambiante {
+  grid-area: cambiante;
+}
+.leedor {
+  grid-area: leedor;
+}
+.nativista {
+  grid-area: nativista;
+}
+.políglota {
+  grid-area: políglota;
+}
+.experimentado {
+  grid-area: experimentado;
+}
+.calculador {
+  grid-area: calculador;
+}
+
+.parametros-calculador {
+  display: flex;
+  cursor: text;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 20%;
+  gap: 1rem;
+}
+
+.oculto {
+  visibility: hidden;
+  opacity:0;
+  transition:visibility 0.3s ease,opacity 0.3s ease;
+}
+
+.parametros-calculador > .entrada {
+  cursor: text;
+}
+
+.parametros-calculador > .entrada > input {
+  cursor: text;
+}
+
+/* Media queries */
+
+/* Estilos para tablets (ancho entre 401px y 768px) */
+@media (min-width: 401px) and (max-width: 768px) {
+  .contenido-pestaña {
+    min-width: 70%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .seleccion {
+    gap: 0.2rem;
+  }
+
+  .flex-lectura {
+    justify-items: center;
+  }
+
+  .grilla-busqueda {
+    margin-left: 0.5rem;
+    grid-template-columns: 2fr 2fr 1.2fr;
+    gap: 0.5rem;
+  }
+
+  .grilla-datos,
+  .contenedor-criterio,
+  .flex-lectura {
+    font-size: 0.8rem;
+  }
+
+  .limite-max {
+    margin-bottom: 1.5rem;
+  }
+  .limite-min {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Estilos para celulares (máximo 400px) */
+@media (max-width: 400px) {
+  .contenido-pestaña {
+    margin: 0 0 1rem 0;
+    align-items: flex-start;
+  }
+
+  .contenido-pestaña hr {
+    width: 95%;
+  }
+
+  .grilla-datos {
+    width: 100%;
+  }
+
+  .entrada input {
+    width: 100%;
+  }
+
+  .grilla-datos {
+    grid-template-columns: 1fr;
+  }
+
+  .grilla-datos {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      'nombre'
+      'apellido'
+      'username'
+      'nacimiento'
+      'mail'
+      'palabras-por-minuto';
+  }
+
+  .flex-lectura {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contenedor-criterio {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .grilla-busqueda {
+    width: 100%;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+      'precavido precavido'
+      'leedor leedor'
+      'políglota políglota'
+      'demandante demandante'
+      'nativista nativista'
+      'experimentado experimentado'
+      'cambiante cambiante'
+      'calculador calculador';
+  }
+
+  .parametros-calculador {
+    margin-left: 1rem;
+    max-width: 90%;
+    flex-direction: row;
+  }
+
+  .contenedor-botones {
+    justify-content: center;
+    margin-bottom: 7rem;
+  }
+}

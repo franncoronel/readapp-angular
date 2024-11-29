@@ -1,0 +1,19 @@
+.grilla-valoraciones {
+    align-self: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .titulo {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 1rem;
+    gap: 0.5rem;
+  }
+
+  readapp-boton-agregar {
+    justify-self: center;
+  }

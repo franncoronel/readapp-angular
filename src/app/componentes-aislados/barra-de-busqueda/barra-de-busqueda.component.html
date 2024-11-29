@@ -1,0 +1,12 @@
+<section class="contenedor-barra">
+    <div class="barra">
+      <!-- 
+          Lo que se ingresa a este cuadro de input está bindeado a la propiedad búsqueda del modelo y a la vez, todos los cambios
+          que se producen disparan el método buscar() que actualiza la propiedad nuevaBusqueda, que enviaremos a otro componente.
+      -->
+      <input type="search" class="buscador" placeholder="Buscar" [(ngModel)]="busqueda" (input)="buscar()" data-testid="input-barra-de-busqueda"/>
+      <button type="submit" class="boton-busqueda">
+        <img class="lupa" src="lupa.svg"/>
+      </button>
+    </div>
+</section>

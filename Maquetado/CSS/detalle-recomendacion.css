@@ -1,0 +1,111 @@
+.contenedor-articulos {
+  box-sizing: border-box;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-articulos > .titulo {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.contenedor-articulos > hr {
+  margin: 2rem;
+  align-self: center;
+  width: 100%;
+}
+
+.recomendacion-titulo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+}
+
+.recomendacion-titulo > .entrada {
+  width: 80%;
+  height: 2.5rem;
+  border-radius: 1rem;
+  border: solid var(--color-bordes);
+  padding-left: 0.5rem;
+}
+
+.articulo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.articulo > .titulo {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 1rem;
+  gap: 0.5rem;
+}
+
+.grilla {
+  align-self: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.grilla > button {
+  align-self: center;
+  justify-self: center;
+}
+
+.desechar-libro {
+  align-self: flex-end;
+  margin-top: 0.5rem;
+}
+
+.articulo-reseña > .entrada {
+  width: 100%;
+  height: 7rem;
+  padding: 1rem;
+  resize: none;
+  scrollbar-width: thin;
+}
+
+.articulo-reseña > p {
+  text-indent: 2em;
+}
+
+.contenedor-articulos footer {
+  font-size: 0.8rem;
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+/*media query*/
+@media (min-width: 401px) and (max-width: 768px) {
+  .grilla {
+    grid-template-columns: 1fr;
+  }
+  .recomendacion-titulo > .entrada {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .grilla {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-articulos {
+    padding: 5%;
+  }
+  .contenedor-articulos footer {
+    margin: 0.5rem 0 7rem 0;
+  }
+  .recomendacion-titulo > .entrada {
+    width: 100%;
+  }
+}

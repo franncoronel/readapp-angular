@@ -1,0 +1,42 @@
+.contenedor-amigo{
+  width: 100%;
+  min-width: 20rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-terciario-hover);
+  border-radius: 0.2rem;
+  border: 0.15rem solid var(--color-terciario);
+  padding: 0.5rem;
+}
+
+.contenedor-amigo-miniatura {
+  height: 4rem;
+  width: 4rem;
+  border: 0.15rem solid var(--color-cuaternario);
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.detalles-amigo {
+  display: flex;
+  border-radius: 0.5rem;
+}
+
+.detalles-amigo-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+  font-weight: bold;
+}
+
+
+.contenedor-amigo:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.5);
+   background-color: var(--color-terciario);
+  }

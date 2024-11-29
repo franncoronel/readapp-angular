@@ -1,0 +1,39 @@
+.contenido {
+    display: flex;
+    margin-top: 6rem;
+}
+.contenedor-grilla {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error {
+    width: 80%;
+    min-height: 3rem;
+    text-align: center;
+    justify-self: center;
+    border-radius: 1rem;
+    font-size: 2rem;
+    background-color: var(--color-primario);
+    color: white;
+}
+
+@media ((min-width: 400px) and (max-width: 768px)) {
+    .contenido{
+        padding: 1rem;
+        flex-direction: column;
+        justify-items: center;
+    }
+}
+@media (max-width: 400px) {
+    .contenido {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+      margin-bottom: 6rem;
+      gap: 1em;
+    }
+  }

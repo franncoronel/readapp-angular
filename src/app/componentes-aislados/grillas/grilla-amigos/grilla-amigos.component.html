@@ -1,0 +1,7 @@
+<main class="contenedor-grilla">
+  <section class="contenedor-tarjetas">
+      @for (amigo of amigos; track amigo; let i = $index) {
+        <readapp-tarjeta-amigo [amigo]="amigo" (amigoAEliminar)="eliminarAmigo($event)"></readapp-tarjeta-amigo>
+       }
+  </section>
+</main>

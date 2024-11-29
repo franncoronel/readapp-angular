@@ -1,0 +1,32 @@
+<main class="contenedor-libro" (click)="capturarId()">
+    <img src="{{ libro.imagen }}">
+    <section class="informacion-libro">
+      <header>
+        <hgroup class="titulo-libro">
+          <h1>{{libro.titulo}}</h1>
+          <div class="iconos">
+            <img *ngIf="libro.bestSeller" src="certificate.svg" data-testid="best-seller"/>
+            <img *ngIf="libro.desafiante" src="flame.svg" data-testid="desafiante"/>
+          </div>
+        </hgroup>
+        <h2 class="autor-libro">Por {{libro.autor}}</h2>
+      </header>
+      <ul>
+        <li class="datos-libro">
+          <img src="paginas.svg" /> {{libro.paginas}} páginas
+        </li>
+        <li class="datos-libro">
+          <img src="palabras.svg" />{{libro.palabras}} palabras
+        </li>
+        <li class="datos-libro" data-testid="idiomas">
+          <img src="idiomas.svg" />{{idiomasConFormato(libro.idiomas) | titlecase }}
+        </li>
+        <li class="datos-libro">
+          <img src="ventas.svg" />{{libro.ventasSemanales}} ventas semanales
+        </li>
+      </ul>
+      <button class="desechar-libro interno" *ngIf="estaEditando()" (click)="borrar()" data-testid="boton-basura">
+        <img src="trash.svg"/>
+      </button>
+    </section>
+  </main>

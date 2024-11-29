@@ -1,0 +1,12 @@
+<section class="contenedor-barra">
+    <div class="barra">
+      <input type="search" class="buscador" placeholder="Buscar" [(ngModel)]="busqueda" (input)="buscar()"/>
+      <button type="submit" class="boton-busqueda">
+        <img class="lupa" src="lupa.svg" />
+      </button>
+    </div>
+    <label class="filtro-check" for="check">
+      <input type="checkbox" id="check" (click)="filtrarRecomendacionesPrivadas()" data-testid="checkFiltro"/>
+      Solo ver recomendaciones privadas
+    </label>
+  </section>

@@ -1,0 +1,4 @@
+<h1 class="titulo-vista">Libros leídos</h1>
+<section class="contenedor-principal">
+    <readapp-grilla [mostrarBoton]="true" [libros]="libros" (libroEliminado)="hayLibroEliminado($event)" (libroAgregado)="hayLibroAgregado($event)" ></readapp-grilla>
+</section>

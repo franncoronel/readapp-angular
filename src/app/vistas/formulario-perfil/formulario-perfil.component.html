@@ -1,0 +1,80 @@
+<h1 class="titulo-vista">Información</h1>
+<article data-testid="contenedor-principal" class="contenido-pestaña" *ngIf="usuario">
+  <h3 class="titulo-seccion">General</h3>
+  <form class="grilla-datos">
+    <label class="entrada entrada-nombre" for="nombre">
+      Nombre
+      <input type="text" id="nombre" placeholder="Tu nombre" name="nombre" [(ngModel)]="usuario.nombre" required #nombre="ngModel" data-testid="usuario-nombre" />
+      <readapp-control-de-errores [elementoDeDominio]="usuario" [campo]="'Nombre'" ></readapp-control-de-errores>
+    </label>
+    <label class="entrada entrada-apellido" for="apellido">
+      Apellido
+      <input data-testid="usuario-apellido" type="text" id="apellido" placeholder="Tu apellido" name="apellido" [(ngModel)]="usuario.apellido" />
+      <readapp-control-de-errores [elementoDeDominio]="usuario" [campo]="'Apellido'" ></readapp-control-de-errores>
+    </label>
+    <label class="entrada entrada-nombre-usuario" for="username">
+      Username
+      <input data-testid="usuario-username" type="text" id="username" placeholder="Tu username" name="username" [(ngModel)]="usuario.username"/>
+      <readapp-control-de-errores [elementoDeDominio]="usuario" [campo]="'Username'" ></readapp-control-de-errores>
+    </label>
+    <label class="entrada entrada-nacimiento" for="fecha">
+      Fecha de nacimiento
+      <input data-testid="usuario-fecha" type="date" id="fecha" name="fechaRender" [ngModel]="usuario.fechaNacimiento | date: 'yyyy-MM-dd'" (ngModelChange)="usuario.fechaNacimiento = $event" min="{{fechaMinima  | date: 'yyyy-MM-dd'}}" max="{{fechaMaxima | date:'yyyy-MM-dd'}}"/>
+      <readapp-control-de-errores [elementoDeDominio]="usuario" [campo]="'Fecha'" ></readapp-control-de-errores>
+    </label>
+    <label class="entrada entrada-correo" for="correo">
+      Correo electrónico
+      <input data-testid="usuario-correo" type="text" id="correo" placeholder="Tu correo electrónico" name="correo" [(ngModel)]="usuario.email"/>
+      <readapp-control-de-errores [elementoDeDominio]="usuario" [campo]="'Correo'" ></readapp-control-de-errores>
+    </label>
+    <label class="entrada entrada-palabras-por-minuto" for="ppm">
+      Palabras por minuto
+      <input data-testid="usuario-palabras" type="number" id="ppm" min="1" placeholder="Ingresa un valor numérico" name="palabrasPorMinuto" [ngModel]="usuario.palabrasPorMinuto" (ngModelChange)="usuario.palabrasPorMinuto = $event"/>
+      <readapp-control-de-errores [elementoDeDominio]="usuario" [campo]="'PalabrasPorMinuto'" ></readapp-control-de-errores>
+    </label>
+  </form>
+  <hr />
+  <h3 class="titulo-seccion">Forma de lectura</h3>
+  <form class="flex-lectura">
+    @for (tipo of tiposDeLector; track tipo){
+      <!-- En este ciclo y en el de criterio de búsqueda se usan pipes para ajustar el texto recibido a los requisitos de las clases y los id. -->
+      <label class="seleccion {{tipo | lowercase}}" for="radio-{{tipo | lowercase}}">
+        <input [attr.data-testid]="'usuario-tipo-'+tipo|lowercase" type="radio" id="radio-{{tipo | lowercase}}" name="tipoDeLector" [(ngModel)]="usuario.tipoLector" value="{{tipo}}" />
+        {{tipo}}
+      </label>
+    }
+    <readapp-control-de-errores [elementoDeDominio]="usuario" [campo]="'tipoDeLector'"></readapp-control-de-errores>
+  </form>
+  <hr/>
+  <h3 class="titulo-seccion">Criterio de búsqueda</h3>
+  <section class="contenedor-criterio">
+    <form class="grilla-busqueda">
+      @for (criterio of criterios; track criterio) {
+        <label class="{{criterio | lowercase}} seleccion" for="tilde-{{criterio | lowercase}}">
+          <input type="checkbox" id="tilde-{{criterio | lowercase}}" [checked]="usuario.contieneCriterio(criterio)" (change)="actualizarCriterios(criterio,$event)" [attr.data-testid]="'usuario-criterio-'+criterio|lowercase"/>
+          <!-- 
+              El cuadro de input se tilda y destilda en base a lo que recibe del objeto usuario.
+              También, se define el comportamiento del click, que efectúa un cambio de tildado a destildado y viceversa
+              llamando al método actualizarCriterios.
+          -->
+          {{criterio}}
+      </label>      
+      }
+    </form>
+      <aside class="parametros-calculador" [ngClass]="{'oculto':!usuario.contieneCriterio('Calculador')}" data-testid="usuario-minimo-maximo">
+        <label class="limite-min entrada" for="mínimo">
+          Límite mínimo
+          <input data-testid="usuario-minimo" type="number" min="0"  id="mínimo" [ngModel]="usuario.minimo" (ngModelChange)="usuario.minimo = $event"/>
+        </label>
+        <label class="limite-max entrada" for="máximo">
+          Límite máximo
+          <input data-testid="usuario-maximo" type="number" min="0" id="máximo" [ngModel]="usuario.maximo" (ngModelChange)="usuario.maximo = $event"/>
+        </label>
+      </aside>
+  </section>
+  <readapp-control-de-errores [elementoDeDominio]="usuario" [campo]="'Criterios'" ></readapp-control-de-errores>
+</article>
+<footer class="contenedor-botones" *ngIf="usuario">
+  <readapp-boton-secundario [verCancelar]="true" (click)="cancelarCambios()"></readapp-boton-secundario>
+  <readapp-boton-primario [verGuardar]="true" (click)="guardarCambios()"></readapp-boton-primario>
+</footer>

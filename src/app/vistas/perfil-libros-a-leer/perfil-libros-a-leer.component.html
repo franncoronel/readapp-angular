@@ -1,0 +1,8 @@
+<h1 class="titulo-vista">Libros a leer</h1>
+<section class="contenedor-grilla">
+    <readapp-grilla data-testid="grillaLibro" [mostrarBoton]="true" [libros]="libros" (libroEliminado)="hayLibroEliminado($event)" (libroAgregado)="hayLibroAgregado($event)" ></readapp-grilla>
+</section>
+
+@for (error of errores ; track error) {
+    <div class="error">{{error}}</div>
+}

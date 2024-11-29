@@ -1,0 +1,114 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(var(--color-primario), var(--color-secundario))
+}
+
+.contenedor {
+  border-radius: 1.25em;
+  padding: 2.5em;
+  box-shadow: 0 0 1em var(--color-sombra);
+  box-sizing: border-box;
+  width: 37.5em;
+  min-height: 25em;
+  background-color: var(--color-terciario);
+}
+
+.contenedor-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor-contenido-titulo,
+.contenedor-contenido-titulo img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+  font-weight: var(--peso-titulo);
+  font-size: 4em;
+  user-select: none;
+}
+
+.contenedor-contenido-titulo img {
+  width: 0.3em;
+}
+
+.contenedor-contenido-inputs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  padding: 1em;
+  gap: 0.5em;
+}
+
+.contenedor-contenido-inputs input {
+  border-radius: 0.7em;
+  border: 0.125em solid var(--color-bordes);
+  outline: 0.125em solid var(--color-primario);
+  height: 3em;
+  padding: 0 1em;
+}
+
+.contenedor-contenido-inputs input:focus{
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+.contenedor-contenido-inputs label {
+  font-size: 1.2em;
+}
+
+.password-icono {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-icono input {
+  width: 100%;
+  position: relative;
+}
+
+.password-icono img {
+  position: absolute;
+  width: 2em;
+  right: 6%;
+  bottom: 25%;
+  cursor: pointer;
+}
+
+readapp-boton-primario{
+  display: flex;
+  justify-content: center;
+}
+
+.disabled-button {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.error-message {
+  color: red; 
+  margin-top: 1em; 
+  font-weight: bold; 
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .contenedor {
+    box-shadow: none;
+    background-color: linear-gradient(var(--color-primario), var(--color-secundario));
+  }
+}

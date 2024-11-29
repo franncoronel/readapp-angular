@@ -1,0 +1,28 @@
+.grilla {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  padding: 1em;
+}
+
+.grilla > readapp-boton-agregar {
+  flex:0;
+  align-self: center;
+  justify-self: center;
+}
+
+
+@media (min-width: 401px) and (max-width: 768px) {
+  .grilla {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .grilla {
+    grid-template-columns: 1fr;
+  }
+}

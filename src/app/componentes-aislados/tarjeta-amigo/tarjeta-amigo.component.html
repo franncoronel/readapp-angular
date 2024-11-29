@@ -1,0 +1,19 @@
+<section class="contenedor-amigo">
+  <figcaption class="detalles-amigo">
+      <img
+        src="{{ amigo.foto }}"
+        alt="Usuario"
+        class="contenedor-amigo-miniatura"
+      />
+      <section class="detalles-amigo-texto">
+        <p class="detalles-amigo-data">{{amigo.nombre}} {{amigo.apellido}} </p>
+        <p class="detalles-amigo-username">{{ amigo.username }}</p>
+      </section>
+    </figcaption>
+    <!-- <div class="botonera"> -->
+      <button class="interno" (click)="eliminarAmigo()">
+        <img src="trash.svg" alt="Botón de basura" />
+      </button>
+    <!-- </div> -->
+  </section>
+  

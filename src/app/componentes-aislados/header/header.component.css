@@ -1,0 +1,158 @@
+.header {
+  height: 5rem;
+  background-color: var(--color-primario);
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  color: white;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.contenedor-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 1.2rem;
+  cursor: pointer;
+  color: white;
+}
+
+.logo {
+  color: var(--color-secundario);
+  width: 2rem;
+  margin-right: 0.3rem;
+}
+
+.iconos-header {
+  position: absolute;
+  right: 1vw;
+}
+
+.contenedor-usuario {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1rem;
+  margin: 0 1rem 0 0;
+  cursor: pointer;
+}
+
+.hamburguesa {
+  display: none;
+}
+
+.contenedor-usuario-miniatura {
+  height: 3rem;
+  width: 3rem;
+  margin: 0 0.2rem 0 0;
+  border: 0.1rem solid var(--color-cuaternario);
+  border-radius: 50%;
+}
+
+.navegacion {
+  display: none;
+}
+
+.navegacion:checked+.navbar {
+  height: 12rem;
+}
+
+.navbar {
+  width: 13rem;
+  background-color: var(--color-primario-hover);
+  position: absolute;
+  top: 5rem;
+  left: calc(100vw - 13rem);
+  height: 0;
+  transition: all 0.5s;
+  border-radius: 0 0 0 2%;
+}
+
+.ul-links {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.3rem;
+  padding: 0 0.8rem;
+}
+
+.items-lista {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  width: 100%;
+  color: var(--color-cuaternario);
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.link img {
+  width: 1rem;
+  margin-right: 0.3rem;
+}
+
+/* Estilos para tablets (ancho entre 401px y 768px) */
+@media (min-width: 401px) and (max-width: 768px) {
+  .contenedor-usuario {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+}
+
+/* Estilos para celulares (máximo 400px) */
+@media (max-width: 400px) {
+  .header {
+    top: auto;
+    bottom: 0;
+    left: 0;
+  }
+
+  .navbar {
+    width: 100%;
+    top: auto;
+    bottom: 5rem;
+    left: 0;
+    border-radius: 0;
+  }
+
+  .ul-links {
+    gap: 4rem;
+    justify-content: space-evenly;
+  }
+
+  .link {
+    font-size: 1.5rem;
+    justify-content: flex-end;
+  }
+
+  .navegacion:checked+.navbar {
+    height: calc(100vh - 5rem);
+  }
+
+  .contenedor-usuario {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,33 @@
+<main *ngIf="recomendacion" class="tarjeta-recomendacion">
+    <h4 class="titulo-recomendacion">Recomendación</h4>
+    <header class="encabezado-recomendacion">
+        <h2>{{recomendacion.titulo}}</h2>
+        <button *ngIf="recomendacion.esCreador" class="interno" [routerLink]="['/edicion-recomendacion', recomendacion.id]">
+            <img src="pencil.svg" alt="editar" />
+        </button>
+        <button *ngIf="recomendacion.esCreador" class="interno" (click)="eliminarRecomendacion()">
+            <img src="trash.svg" alt="eliminar"/>
+        </button>
+        <button *ngIf="iconoCorazon" class="interno" (click)="recomendacionAValorar()">
+            <img [src]="corazonVacio ? 'heart.svg' : 'heart-relleno.png'" alt="like"/>
+        </button>
+    </header>
+    <hr />
+    <section class="cuerpo-recomendacion">
+        <p>
+            {{recomendacion.detalle}}
+        </p>
+        <ul class="contenedor-titulos">
+            @for (libro of recomendacion.librosRecomendados; track libro; let i = $index) {
+                <li class="titulos-libros"><img src="bookmark.svg" alt="libro"> {{libro.titulo}} </li>
+            }
+        </ul>
+    </section>
+    <hr />
+    <footer class="estadisticas-recomendacion">
+        <p><img src="star.svg" alt="puntos" />{{recomendacion.puntaje}}</p>
+        <p><img src="books.svg" alt="libros">{{cantidadLibros()}} libros</p>
+        <p><img src="clock.svg" alt="tiempo" />{{recomendacion.tiempoLectura}} min</p>
+    </footer>
+    <a *ngIf="!estaValorando()" class="ver-mas" [routerLink]="['/detalle-recomendacion', recomendacion.id]">Ver más</a>
+</main>

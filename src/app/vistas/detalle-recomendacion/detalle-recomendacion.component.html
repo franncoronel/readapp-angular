@@ -1,0 +1,19 @@
+<main *ngIf="recomendacion" class="contenedor-articulos">
+    <h1 class="titulo">{{recomendacion.titulo}}</h1>
+    <article class="articulo articulo-libros">
+        <h2 class="titulo">Libros</h2>
+        <readapp-grilla [libros]="recomendacion.librosRecomendados"></readapp-grilla>
+    </article>
+    <hr />
+    <article class="articulo articulo-reseña">
+        <h2 class="titulo">Reseña</h2>
+        <span>{{recomendacion.detalle}}</span>
+    </article>
+    <hr />
+    <article class="articulo articulo-valoraciones">
+        <readapp-grilla-valoraciones [valoraciones]="recomendacion.valoraciones" [recomendacion]="recomendacion" [mostrarBoton]="puedeValorar"></readapp-grilla-valoraciones>
+    </article>
+    <footer class="contenedor-botones">
+        <readapp-boton-secundario [verVolver]="true" (click)="navegarAHome()" ></readapp-boton-secundario>
+    </footer>
+</main>

@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap");
+
+/* 
+   Este archivo sería como el archivo de estilo general de la entrega 1.
+*/
+
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 2px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-cuaternario);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+:root {
+  /* Colores */
+  --color-primario: #756ab6;
+  --color-secundario: #ac87c5;
+  --color-terciario: #e0aed0;
+  --color-cuaternario: #ffe5e5;
+  --color-bordes: #cccc;
+  --color-sombra: rgba(0, 0, 0, 0.25);
+  --color-primario-hover: #2e2561;
+  --color-secundario-hover: rgb(186, 126, 226);
+  --color-terciario-hover: #f3e1ed;
+  --color-fuente: black;
+  /* Fuentes */
+  --fuente: "Gabarito", sans-serif;
+  --peso-titulo: 900;
+  --peso-texto: 400;
+}
+
+html {
+  font-size: 16px;
+  /* Referencia para los rem */
+}
+
+.requerido {
+  color: var(--color-primario);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--fuente);
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-fuente);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.titulo-vista {
+  font-size: 3rem;
+}
+
+
+/* Estilos para inputs radio e inputs check */
+
+.seleccion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  accent-color: black;
+}
+
+/* Estilo para reglas horizontales */
+
+hr {
+  background-color: black;
+  height: 0.01em;
+  border: none;
+}
+
+/* Estilos para los botones */
+
+.boton {
+  font-family: var(--fuente);
+  font-weight: 400;
+  font-size: 1rem;
+  width: max-content;
+  padding: 0.5rem;
+  box-shadow: 0 0 1em var(--color-sombra);
+  border-radius: 0.4em;
+  border: 0;
+  transition: background-color 0.5s;
+}
+
+.boton:hover {
+  box-shadow: 0 0.25rem 0.5rem var(--color-sombra);
+}
+
+.interno:hover {
+  transform: translateY(-0.8px);
+}
+
+@media (max-width:400px){
+  .titulo-vista {
+      font-size: 2.5rem;
+  }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

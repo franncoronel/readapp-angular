@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReadApp</title>
+    <link rel="stylesheet" href="../CSS/general.css" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+    <link rel="stylesheet" href="../CSS/botones.css" />
+    <link rel="stylesheet" href="../CSS/perfil-general.css" />
+    <link rel="stylesheet" href="../CSS/perfil-informacion.css" />
+  </head>
+  <body>
+    <header class="contenedor-header">
+      <div class="header">
+        <div class="contenedor-logo">
+          <img class="logo" src="../assets/logo_main.svg" alt="Logo" />
+          <h1>ReadApp</h1>
+        </div>
+        <div class="contenedor-usuario">
+          <img
+            src="../assets/mono.png"
+            alt="Usuario"
+            class="contenedor-usuario-miniatura"
+          />
+          <p>Mono Monito</p>
+        </div>
+        <div class="hamburguesa">
+          <img src="../assets/list.svg" alt="Menu hamburguesa" />
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor-principal">
+      <aside class="contenedor-nav-perfil">
+        <header class="contenedor-nav-perfil-usuario">
+          <img
+            src="../assets/mono.png"
+            alt="Usuario"
+            class="contenedor-nav-perfil-usuario-foto"
+          />
+          <a href=""><h2>Mono Monito</h2></a>
+          <hr />
+        </header>
+        <nav class="contenedor-pestaña">
+          <a href="">
+            <div class="pestaña activa">
+              <img
+                class="pestaña-imagen"
+                src="../assets/info.svg"
+                alt="información"
+              />
+              Información
+            </div>
+          </a>
+          <a href="">
+            <div class="pestaña">
+              <img
+                class="pestaña-imagen"
+                src="../assets/friends.svg"
+                alt="amigos"
+              />
+              Amigos
+            </div>
+          </a>
+          <a href="">
+            <div class="pestaña">
+              <img
+                class="pestaña-imagen"
+                src="../assets/books-black.svg"
+                alt="libros-leidos"
+              />
+              Libros leídos
+            </div>
+          </a>
+          <a href="">
+            <div class="pestaña">
+              <img
+                class="pestaña-imagen"
+                src="../assets/bookmarks2.svg"
+                alt="libros-a-leer"
+              />
+              Libros a leer
+            </div>
+          </a>
+          <a href="">
+            <div class="pestaña">
+              <img
+                class="pestaña-imagen"
+                src="../assets/heart-black.svg"
+                alt="recomendaciones"
+              />
+              Recomendaciones a valorar
+            </div>
+          </a>
+        </nav>
+      </aside>
+
+      <article class="contenido-pestaña">
+        <h1 class="titulo-vista">Información</h1>
+        <h3 class="titulo-seccion">General</h3>
+        <form class="grilla-datos">
+          <label class="entrada entrada-nombre" for="nombre">
+            Nombre
+            <input type="text" id="nombre" required />
+          </label>
+          <label class="entrada entrada-apellido" for="apellido">
+            Apellido
+            <input type="text" id="apellido" />
+          </label>
+          <label class="entrada entrada-nombre-usuario" for="nombre-usuario">
+            Username
+            <input type="text" id="nombre-usuario" />
+          </label>
+          <label class="entrada entrada-nacimiento" for="fecha">
+            Fecha de nacimiento
+            <input type="date" id="fecha" />
+          </label>
+          <label class="entrada entrada-correo" for="correo">
+            Mail
+            <input type="text" id="correo" />
+          </label>
+          <label class="entrada entrada-tiempo-de-lectura" for="tdl">
+            Tiempo de lectura promedio
+            <input type="number" id="tdl" min="0" />
+          </label>
+        </form>
+        <hr />
+        <h3 class="titulo-seccion">Forma de lectura</h3>
+        <form class="flex-lectura">
+          <label class="seleccion promedio" for="radio-promedio">
+            <input type="radio" id="radio-promedio" name="forma" checked />
+            Lector promedio
+          </label>
+          <label class="seleccion ansioso" for="radio-ansioso">
+            <input type="radio" id="radio-ansioso" name="forma" />
+            Ansioso
+          </label>
+          <label class="seleccion fanatico" for="radio-fanatico">
+            <input type="radio" id="radio-fanatico" name="forma" />
+            Fanático
+          </label>
+          <label class="seleccion recurrente" for="radio-recurrente">
+            <input type="radio" id="radio-recurrente" name="forma" />
+            Recurrente
+          </label>
+        </form>
+        <hr />
+        <h3 class="titulo-seccion">Criterio de búsqueda</h3>
+        <section class="contenedor-criterio">
+          <form class="grilla-busqueda">
+            <label class="precavido seleccion" for="tilde-precavido">
+              <input type="checkbox" id="tilde-precavido" />
+              Precavido
+            </label>
+            <label class="leedor seleccion" for="tilde-leedor">
+              <input type="checkbox" id="tilde-leedor" />
+              Leedor
+            </label>
+            <label class="poliglota seleccion" for="tilde-poliglota">
+              <input type="checkbox" id="tilde-poliglota" />
+              Poliglota
+            </label>
+            <label class="demandante seleccion" for="tilde-demandante">
+              <input type="checkbox" id="tilde-demandante" />
+              Demandante
+            </label>
+            <label class="nativista seleccion" for="tilde-nativista">
+              <input type="checkbox" id="tilde-nativista" />
+              Nativista
+            </label>
+            <label class="experimentado seleccion" for="tilde-experimentado">
+              <input type="checkbox" id="tilde-experimentado" />
+              Experimentado
+            </label>
+            <label class="cambiante seleccion" for="tilde-cambiante">
+              <input type="checkbox" id="tilde-cambiante" />
+              Cambiante
+            </label>
+            <label class="calculador seleccion" for="tilde-calculador">
+              <input type="checkbox" id="tilde-calculador" />
+              Calculador
+            </label>
+          </form>
+          <aside class="parametros-calculador">
+            <label class="limite-min entrada">
+              Límite mínimo
+              <input type="number" min="0" />
+            </label>
+            <label class="limite-max entrada">
+              Límite máximo
+              <input type="number" min="0" />
+            </label>
+          </aside>
+        </section>
+      </article>
+    </main>
+
+    <footer class="contenedor-botones">
+      <button class="boton secundario" type="button">
+        <span>Cancelar</span>
+      </button>
+      <button class="boton primario" type="button">
+        <span>Guardar cambios</span>
+      </button>
+    </footer>
+  </body>
+</html>

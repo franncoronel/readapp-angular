@@ -1,0 +1,17 @@
+.contenido-principal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+readapp-barra-de-busqueda {
+  width: 100%;
+}
+
+@media (max-width: 400px) {
+  .contenido-principal {
+    margin-top: 0;
+  }
+}

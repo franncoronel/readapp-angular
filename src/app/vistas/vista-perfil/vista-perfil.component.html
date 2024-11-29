@@ -1,0 +1,4 @@
+<main class="contenedor-principal">
+    <readapp-aside-perfil></readapp-aside-perfil>
+    <div class="contenedor-router" *ngIf="usuario"><router-outlet (activate)="cargarAlOutlet($event)"></router-outlet></div>
+</main>

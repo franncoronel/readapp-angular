@@ -1,0 +1,37 @@
+.tarjeta-valoracion {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 100%;
+}
+
+.usuario-valoracion {
+  display: grid;
+  grid-template-columns: auto 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "profile-pic nombre valoracion"
+    "profile-pic fecha .";
+  width: 100%;
+  justify-self: start;
+}
+
+.usuario-valoracion > .nombre {
+  grid-area: nombre;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.usuario-valoracion > .fecha {
+  font-style: italic;
+  grid-area: fecha;
+}
+
+.usuario-valoracion > .valoracion {
+  grid-area: valoracion;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+}

@@ -1,0 +1,33 @@
+.contenido-principal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 1rem;
+  gap: 1rem;
+  width: 100%;
+  max-width: 70rem;
+  justify-items: center;
+}
+
+/* Estilos para tablets (ancho entre 401px y 768px) */
+@media (min-width: 401px) and (max-width: 768px) {
+  .contenedor-tarjetas {
+    grid-template-columns: 1fr 1fr;
+    max-width: 35rem;
+  }
+}
+
+/* Estilos para celulares (máximo 400px) */
+@media (max-width: 400px) {
+  .contenedor-tarjetas {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem 7rem 1rem;
+    max-width: 18rem;
+    gap: 1.5rem;
+  }
+}

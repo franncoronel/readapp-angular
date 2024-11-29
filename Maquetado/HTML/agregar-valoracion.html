@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReadApp</title>
+    <link rel="stylesheet" href="../CSS/general.css" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+    <link rel="stylesheet" href="../CSS/botones.css" />
+    <link rel="stylesheet" href="../CSS/tarjeta-recomendacion.css" />
+    <link rel="stylesheet" href="../CSS/agregar-valoracion.css" />
+  </head>
+  <body>
+    <header class="contenedor-header">
+      <div class="header">
+        <div class="contenedor-logo">
+          <img class="logo" src="../assets/logo_main.svg" alt="Logo" />
+          <h1>ReadApp</h1>
+        </div>
+        <div class="contenedor-usuario">
+          <img
+            src="../assets/mono.png"
+            alt="Usuario"
+            class="contenedor-usuario-miniatura"
+          />
+          <p>Mono Monito</p>
+        </div>
+        <div class="hamburguesa">
+          <img src="../assets/list.svg" alt="Menu hamburguesa" />
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor-principal">
+        <section class="tarjeta-recomendacion">
+                <header class="encabezado-recomendacion">
+                  <h2>Recomendación Loca</h2>
+                </header>
+                <hr />
+                <section class="cuerpo-recomendacion">
+                  <p>
+                    "Es un conjunto de libros re copados que se pueden leer en
+                    familia. Muy recomendables para niños"
+                  </p>
+                  <ul class="contenedor-titulos">
+                    <li>
+                      <img src="../assets/bookmark.svg" alt="libro" />Cuidado con el
+                      perro
+                    </li>
+                    <li>
+                      <img src="../assets/bookmark.svg" alt="libro" />Cuidado con el
+                      perro
+                    </li>
+                    <li>
+                      <img src="../assets/bookmark.svg" alt="libro" />Cuidado con el
+                      perro
+                    </li>
+                    <li>
+                      <img src="../assets/bookmark.svg" alt="libro" />Cuidado con el
+                      perro
+                    </li>
+                  </ul>
+                </section>
+                <hr />
+                <footer class="estadisticas-recomendacion">
+                  <p><img src="../assets/star.svg" alt="puntos" />4,5</p>
+                  <p><img src="../assets/books.svg" alt="libros" />4 libros</p>
+                  <p><img src="../assets/clock.svg" alt="tiempo" />8h</p>
+                </footer>
+                <a href="" class="ver-mas">Ver más</a>
+              </section>
+        </section>
+        <section class="nueva-valoracion">
+            <h1 class="titulo">Nueva valoración</h1>
+            <section class="contenedor-puntaje">
+            <h3 class="sub-titulo">Agregá un puntaje<span class="requerido">*</span></h3>
+            <label class="puntaje-valoracion">
+              <img src="../assets/star-black.svg" alt="puntaje">
+              <input class="puntaje" type="number" min="1" max="5"/>
+            </label>
+            </section>
+            <h3 class="sub-titulo">Agregá una descripción<span class="requerido">*</span></h3>
+            <textarea class="contenido-valoracion" placeholder="¿Qué opinas sobre esta recomendación?"></textarea>
+
+           
+          </main>
+          <footer class="contenedor-botones">
+            <readapp-boton-secundario [verCancelar]="true" (click)="navegarAHome()"></readapp-boton-secundario>
+            <readapp-boton-primario [verValoracion]="true" (click)="guardarCambios()"></readapp-boton-primario>
+          </footer>
+  </body>
+</html>

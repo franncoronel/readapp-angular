@@ -1,0 +1,31 @@
+.contenedor-grilla {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 0.5rem;
+  gap: 1rem;
+  width: 100%;
+  max-width: 70rem;
+  justify-content: center;
+  align-self: center;
+}
+
+/* Estilos para tablets (ancho entre 401px y 768px) */
+@media (min-width: 401px) and (max-width: 768px) {
+  .contenedor-tarjetas {
+    max-width: 35rem;
+  }
+}
+
+/* Estilos para celulares (máximo 400px) */
+@media (max-width: 400px) {
+  .contenedor-tarjetas {
+    padding: 1rem 1rem 7rem 1rem;
+    max-width: 18rem;
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,13 @@
+<main class="tarjeta-valoracion">
+  <header class="usuario-valoracion">
+    <img src={{valoracion.fotoCreador}} alt="Usuario" class="contenedor-usuario-miniatura" />
+    <div class="datos">
+      <p class="nombre">{{valoracion.usernameCreador}}</p>
+      <p class="fecha">{{fechaFormateada(valoracion.fecha)}}</p>
+    </div>
+    <p class="valoracion"><img src="star-black.svg" />{{valoracion.valor}}</p>
+  </header>
+  <p class="cuerpo-valoracion">
+    {{valoracion.comentario}}
+  </p>
+</main>

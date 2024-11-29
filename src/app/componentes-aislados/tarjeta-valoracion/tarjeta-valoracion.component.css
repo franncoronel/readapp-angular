@@ -1,0 +1,44 @@
+.tarjeta-valoracion {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .usuario-valoracion {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .usuario-valoracion > img {
+    width: 4rem;
+    align-self: flex-start;
+    margin-right: 1rem;
+    border-radius: 50%;
+  }
+  
+  .datos {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .datos > .nombre {    
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .datos > .fecha {
+    font-style: italic;
+    grid-area: fecha;
+  }
+  
+  .valoracion {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  

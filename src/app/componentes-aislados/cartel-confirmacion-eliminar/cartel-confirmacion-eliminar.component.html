@@ -1,0 +1,12 @@
+<section class="contenedor-cartel">
+<h1 mat-dialog-title class="titulo-pregunta">{{data.titulo}}</h1>
+
+<div mat-dialog-content class="subtitulo-pregunta">
+  {{data.subtitulo}}
+</div>
+
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button class="boton secundario" (click)="cancelar()">Cancelar</button>
+  <button mat-button class="boton primario" (click)="confirmar()">Aceptar</button>
+</div>
+</section>

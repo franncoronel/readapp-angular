@@ -1,0 +1,164 @@
+ol,
+ul {
+  list-style: none;
+}
+.header {
+  height: 5rem;
+  background-color: var(--color-primario);
+}
+.navbar {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.contenedor-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.logo {
+  color: var(--color-secundario);
+  width: 2rem;
+  margin-right: 0.3rem;
+}
+
+.contenedor-usuario {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1rem;
+  margin: 0 1rem 0 0;
+  cursor: pointer;
+}
+
+.hamburguesa {
+  display: none;
+}
+
+.contenedor-usuario-miniatura {
+  height: 3rem;
+  width: 3rem;
+  margin: 0 0.2rem 0 0;
+  border: 0.1rem solid var(--color-cuaternario);
+  border-radius: 50%;
+}
+
+.navegacion {
+  display: none;
+}
+.navegacion:checked + .ul-links {
+  height: calc(50vh - 5rem);
+}
+
+.ul-links {
+  width: 25%;
+  background-color: var(--color-primario-hover);
+  position: absolute;
+  top: 5rem;
+  left: 75vw;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.8s;
+  border-radius: 0 0 0 2%;
+}
+
+.items-lista {  
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--color-cuaternario);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.link img {
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Estilos para tablets (ancho entre 401px y 768px) */
+@media (min-width: 401px) and (max-width: 768px) {
+  .contenedor-usuario {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;
+  }
+
+  .ul-links {
+    width: 35%;
+    left: 65vw;
+  }
+
+  .link {
+    font-size: 0.6rem;
+  }
+  
+
+}
+
+/* Estilos para celulares (máximo 400px) */
+@media (max-width: 400px) {
+  .header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  }
+
+  .ul-links {
+    width: 100%;
+    top: auto;
+    bottom: 5rem;
+    flex-direction: column-reverse;
+    left: 0;
+    gap: 3rem;
+    border-radius: 0;
+  }
+    
+  .link {
+    font-size: 1.5rem;    
+  }
+
+  .navegacion:checked + .ul-links {
+    height: calc(100vh - 5rem);
+  }
+
+  .link {
+    font-size: 1.5rem;
+  }
+
+  .contenedor-usuario {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;
+  }
+}

@@ -1,0 +1,7 @@
+<main  class="grilla" *ngIf="libros">
+  <!-- La notación pipe:algo indica que lo que sigue a los dos puntos es el valor de entrada del pipe. -->
+    @for (libro of libros | filtrarLibros:filtroBusqueda; track libro; let i = $index) {
+      <readapp-libro [libro]="libro" (click)="elegirLibro(libro)" (libroEliminado)="hayLibroEliminado($event)" data-testid="libro-grilla"></readapp-libro>
+    }
+    <readapp-boton-agregar data-testid="agregar-libro" *ngIf="mostrarBoton" (click)="buscarLibro()"></readapp-boton-agregar>
+</main>

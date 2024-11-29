@@ -1,0 +1,7 @@
+<main *ngIf="recomendaciones" class="contenedor-grilla">
+  <section class="contenedor-tarjetas">
+    @for (recomendacion of recomendaciones | filtrarRecomendacionesPrivadas:mostrarSoloPrivadas | filtrarMisRecomendaciones:filtroBusqueda | filtrarBusquedaPrincipal:filtroBusqueda; track recomendacion) {
+    <readapp-tarjeta-recomendacion [recomendacion]="recomendacion" [usuario]="usuario" (recomendacionEliminada)="hayRecomendacionEliminada($event)"></readapp-tarjeta-recomendacion>
+    }
+  </section>
+</main>

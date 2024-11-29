@@ -1,0 +1,49 @@
+<header class="header" *ngIf="usuario" data-testid="headerMain">
+    <a class="contenedor-logo" (click)="navegarAHome(); cerrarNav()" data-testid="logoApp">
+        <img class="logo" src="logo_main.svg" alt="Logo" />
+        <h1>ReadApp</h1>
+    </a>
+
+    <label class="iconos-header" for="navegacion">
+        <div class="contenedor-usuario">
+            <img src={{usuario.foto}} alt="Usuario" class="contenedor-usuario-miniatura" />
+            <p *ngIf="usuario" data-testid="nombreUsuario">{{usuario.username}}</p>
+        </div>
+        <div class="hamburguesa">
+            <img src="list.svg" alt="Menu hamburguesa" />
+        </div>
+    </label>
+
+    <input class="navegacion" type="checkbox" name="" id="navegacion">
+    <nav class="navbar">
+        <ul class="ul-links">
+            <a class="link" (click)="navegarABusquedaDeLibros(); cerrarNav()" data-testid="linkBusquedaLibros">
+                <li class="items-lista">
+                    <img src="lupa blanca.svg" alt="buscar">
+                    Busqueda de libros
+                </li>
+            </a>
+
+            <a class="link" (click)="navegarAMisRecomendaciones(); cerrarNav()" data-testid="linkMisRecomendaciones">
+                <li class="items-lista">
+                    <img src="bookmarks-blanco.svg" alt="recomendaciones">
+                    Mis recomendaciones
+                </li>
+            </a>
+
+            <a class="link" (click)="navegarAInfoPerfil(); cerrarNav()" data-testid="linkInfoPerfil">
+                <li class="items-lista">
+                    <img src="user.svg" alt="usuario">
+                    Perfil de usuario
+                </li>
+            </a>
+
+            <a class="link" (click)="navegarALogin(); cerrarNav()" data-testid="linkLogin">
+                <li class="items-lista">
+                    <img src="sign-out.svg" alt="cerrar-sesion">
+                    Cerrar sesion
+                </li>
+            </a>
+        </ul>
+    </nav>
+</header>

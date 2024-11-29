@@ -1,0 +1,62 @@
+.contenedor-principal {
+    display: flex;
+    height: 80vh;
+    min-height: 700px;
+    min-width: 70%;
+    max-width: 100%;
+    margin-top: 7rem;
+    gap: 1rem;
+  }
+
+readapp-aside-perfil {
+  flex-shrink: 1;
+  margin-left: 1rem;
+}
+
+readapp-main-perfil {
+  flex-grow: 2;
+  min-width: 60%;
+  max-width: 80%;
+  margin-right: 2rem;
+}
+
+.contenedor-router{
+  width: 100%;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  readapp-aside-perfil,
+  readapp-main-perfil {
+    margin: 0;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 768px) {
+  .contenedor-principal {
+    height: auto;
+    flex-direction: column;
+    margin: 0 0 1.5rem 1.5rem;
+    margin-top: 6rem;
+    gap: 1em;
+  }
+
+  readapp-aside-perfil {
+    width: 95%;
+  }
+
+  readapp-main-perfil
+   {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 400px) {
+  .contenedor-principal {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    gap: 1em;
+  }
+}

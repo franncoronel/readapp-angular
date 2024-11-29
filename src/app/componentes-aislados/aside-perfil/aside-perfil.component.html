@@ -1,0 +1,59 @@
+<aside class="contenedor-nav-perfil" *ngIf="usuario">
+  <header class="contenedor-nav-perfil-usuario">
+    <img
+      src={{usuario.foto}}
+      alt="Usuario"
+      class="contenedor-nav-perfil-usuario-foto"
+    />
+    <h2>{{usuario.username}}</h2>
+    <hr />
+  </header>
+  <nav class="contenedor-pestaña">
+    <a (click)="navegarInfo()" data-testid="linkInfo">
+      <div class="pestaña" [ngClass]="{'activa':estaActiva('/perfil/informacion')}">
+        <img
+          class="pestaña-imagen"
+          src="info.svg"
+          alt="información"
+        />
+        Información
+      </div>
+    </a>
+    <a (click)="navegarAmigos()" data-testid="linkAmigos">
+      <div class="pestaña" [ngClass]="{'activa':estaActiva('/perfil/amigos')}">
+        <img class="pestaña-imagen" src="friends.svg" alt="amigos" />
+        Amigos
+      </div>
+    </a>
+    <a (click)="navegarLibrosLeidos()" data-testid="linkLeidos">
+      <div class="pestaña" [ngClass]="{'activa':estaActiva('/perfil/libros-leidos')}">
+        <img
+          class="pestaña-imagen"
+          src="books-black.svg"
+          alt="libros-leidos"
+        />
+        Libros leídos
+      </div>
+    </a>
+    <a (click)="navegarLibrosALeer()" data-testid="linkALeer">
+      <div class="pestaña" [ngClass]="{'activa':estaActiva('/perfil/libros-a-leer')}">
+        <img
+          class="pestaña-imagen"
+          src="bookmarks2.svg"
+          alt="libros-a-leer"
+        />
+        Libros a leer
+      </div>
+    </a>
+    <a (click)="navegarRecomendacionesAValorar()" data-testid="linkAValorar">
+      <div class="pestaña" [ngClass]="{'activa':estaActiva('/perfil/recomendaciones-a-valorar')}">
+        <img
+          class="pestaña-imagen"
+          src="heart-black.svg"
+          alt="recomendaciones"
+        />
+        Recomendaciones a valorar
+      </div>
+    </a>
+  </nav>
+</aside>

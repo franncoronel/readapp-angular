@@ -1,0 +1,8 @@
+<main class="contenido-principal">
+    <readapp-barra-busqueda-filtro (nuevaBusqueda)="crearFiltroBusqueda($event)" (ocultarPrivadas)="crearFiltroVisibilidad($event)"></readapp-barra-busqueda-filtro>
+    <div class="contenido-recomendaciones">
+        <h1 class="titulo-pagina">Mis Recomendaciones</h1>
+        <hr>
+        <readapp-grilla-recomendaciones [usuario]="usuario" [recomendaciones]="recomendaciones" [filtroBusqueda]="filtroBusqueda" [mostrarSoloPrivadas]="filtroVisibilidad" (recomendacionEliminada)="hayRecomendacionEliminada($event)"*ngIf="recomendaciones"></readapp-grilla-recomendaciones>
+    </div>
+</main>

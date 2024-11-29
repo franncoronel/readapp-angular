@@ -1,0 +1,49 @@
+.contenedor-barra {
+  background-color: var(--color-terciario);
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.barra {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.boton-busqueda {
+  background-color: var(--color-primario);
+  border-radius: 0 1rem 1rem 0;
+  border: solid var(--color-primario);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boton-busqueda img {
+  width: 75%;
+}
+
+.buscador {
+  width: 80%;
+  height: 2.5rem;
+  border-radius: 1rem 0 0 1rem;
+  border: solid #ffffff;
+  padding-left: 0.5rem;
+}
+
+.buscador:focus {
+  outline: none;
+}
+
+/* Estilos para dispositivos móviles (máximo 400px) */
+@media (max-width: 400px) {
+  .barra-container {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}

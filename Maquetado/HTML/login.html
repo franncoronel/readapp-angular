@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      id="viewport"
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="../CSS/general.css" />
+    <link rel="stylesheet" href="../CSS/botones.css" />
+    <link rel="stylesheet" href="../CSS/login.css" />
+    <title>ReadApp</title>
+  </head>
+  <body>
+    <main class="wrapper">
+      <section class="contenedor">
+        <form action="" class="contenedor-contenido">
+          <figure class="contenedor-contenido-titulo">
+            <img src="../assets/logo_login.svg" alt="logo login" />
+            <p>ReadApp</p>
+          </figure>
+          <div class="contenedor-contenido-inputs">
+            <label for="">Username<span class="requerido">*</span></label>
+            <input type="text" required />
+          </div>
+          <div class="contenedor-contenido-inputs">
+            <label for="">Password<span class="requerido">*</span></label>
+            <div class="password-icono">
+              <input type="password" id="password" required />
+              <img
+                class="icono-ojo"
+                id="eyeicon"
+                src="../assets/ojo-cerrado.svg"
+              />
+            </div>
+          </div>
+          <p><span class="requerido">*</span> Campos obligatorios</p>
+          <div class="contenedor-contenido-login">
+            <button class="boton login" type="submit">Ingresar</button>
+          </div>
+        </form>
+        <script>
+          let eyeicon = document.getElementById("eyeicon");
+          let password = document.getElementById("password");
+
+          eyeicon.onclick = function () {
+            if (password.type == "password") {
+              password.type = "text";
+              eyeicon.src = "../assets/ojo-abierto.svg";
+            } else {
+              password.type = "password";
+              eyeicon.src = "../assets/ojo-cerrado.svg";
+            }
+          };
+        </script>
+      </section>
+    </main>
+  </body>
+</html>

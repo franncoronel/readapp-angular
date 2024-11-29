@@ -1,0 +1,22 @@
+<main class="contenedor-principal" *ngIf="valoracion">
+    <readapp-tarjeta-recomendacion [recomendacion]="recomendacion"></readapp-tarjeta-recomendacion>
+    <section class="nueva-valoracion">
+        <h1 class="titulo">Nueva valoración</h1>
+        <section class="contenedor-puntaje">
+        <h3 class="sub-titulo">Agregá un puntaje<span class="requerido">*</span></h3>
+        <label class="puntaje-valoracion">
+          <img src="star-black.svg" alt="puntaje">
+          <input class="puntaje" type="number" min="1" max="5" [(ngModel)]="valoracion.valor"/>
+        </label>
+        <readapp-control-de-errores [elementoDeDominio]="valoracion" [campo]="'Puntaje'" ></readapp-control-de-errores>
+      </section>
+        <h3 class="sub-titulo">Agregá una descripción<span class="requerido">*</span></h3>
+        <textarea class="contenido-valoracion" placeholder="¿Qué opinas sobre esta recomendación?" [(ngModel)]="valoracion.comentario"></textarea>
+        <readapp-control-de-errores [elementoDeDominio]="valoracion" [campo]="'Descripcion'" ></readapp-control-de-errores>
+      </section>
+
+</main>
+      <footer class="contenedor-botones">
+        <readapp-boton-secundario [verCancelar]="true" (click)="regresarAtras()"></readapp-boton-secundario>
+        <readapp-boton-primario [verValoracion]="true" (click)="enviarValoracion()"></readapp-boton-primario>
+      </footer>

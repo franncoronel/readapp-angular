@@ -1,0 +1,30 @@
+<main *ngIf="recomendacionEdicion && recomendacion" class="contenedor-articulos">
+    <h1 class="titulo">Titulo<span class="requerido">*</span></h1>
+    <div class="recomendacion-titulo">
+        <input type="text" [(ngModel)]="recomendacionEdicion.titulo" class="entrada" />
+        <label for="tilde-privada" class="seleccion">
+            <input type="checkbox" class="visibilidad" id="tilde-privada" [(ngModel)]="recomendacionEdicion.publica"/>
+            Visibilidad privada
+        </label>
+    </div>
+    <readapp-control-de-errores [elementoDeDominio]="recomendacionEdicion" [campo]="'Titulo'" ></readapp-control-de-errores>
+    <article class="articulo articulo-libros">
+        <h2 class="titulo">Libros</h2>
+        <readapp-grilla [mostrarBoton]="true" [libros]="recomendacionEdicion.librosRecomendados" (libroEliminado)="hayLibroEliminado($event)" (libroAgregado)="hayLibroAgregado($event)" ></readapp-grilla>
+        <readapp-control-de-errores [elementoDeDominio]="recomendacionEdicion" [campo]="'Libros'" ></readapp-control-de-errores>
+    </article>
+    <hr />
+    <article class="articulo articulo-reseña">
+        <h2 class="titulo">Reseña</h2>
+        <textarea class="entrada" [(ngModel)]="recomendacionEdicion.detalle"></textarea>
+        <readapp-control-de-errores [elementoDeDominio]="recomendacionEdicion" [campo]="'Descripcion'"></readapp-control-de-errores>
+    </article>
+    <hr />
+    <article class="articulo articulo-valoraciones">
+        <readapp-grilla-valoraciones [valoraciones]="recomendacion.valoraciones" [recomendacion]="recomendacionEdicion"></readapp-grilla-valoraciones>
+    </article>
+    <footer class="contenedor-botones">
+        <readapp-boton-secundario [verCancelar]="true" (click)="cancelar()"></readapp-boton-secundario>
+        <readapp-boton-primario [verGuardar]="true" (click)="guardarCambios()"></readapp-boton-primario>
+    </footer>
+</main>

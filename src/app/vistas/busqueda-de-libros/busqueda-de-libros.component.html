@@ -1,0 +1,9 @@
+<main class="contenido">
+    <!-- 
+        nuevaBusqueda es el output del modelo de la barra de búsqueda y también es una propiedad del modelo de esta vista (que es el componente padre)
+        Es muy importante que coincidan los nombres del @Output() y de la propiedad que lo recibirá.
+        Los cambios a nuevaBusqueda disparan todo el tiempo la creación del filtro que utilizará el pipe de filtrado.
+    -->
+    <readapp-barra-de-busqueda (nuevaBusqueda)="crearFiltroBusqueda($event)" data-testid="componente-barra-de-busqueda"></readapp-barra-de-busqueda>
+    <readapp-grilla [libros]="libros" [filtroBusqueda]="filtroBusqueda" (libroSeleccionado)="capturarLibro($event)" *ngIf="libros" data-testid="grilla-de-libros"></readapp-grilla>
+</main>

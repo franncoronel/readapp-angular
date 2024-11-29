@@ -1,0 +1,64 @@
+.contenido-principal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.contenido-recomendaciones {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80%;
+}
+
+.titulo-pagina {
+    color: var(--color-primario);
+    margin-left: 1rem;
+    border: var(--color-primario);
+    align-self: start;
+}
+
+readapp-barra-busqueda-filtro {
+    width: 100%;
+}
+
+.contenido-recomendaciones hr {
+    background-color: var(--color-terciario);
+    border: var(--color-terciario) solid 0.01rem;
+    margin: 0 0.5rem;
+    width: 100%;
+}
+
+@media (min-width: 401px) and (max-width: 768px) { 
+    .contenido-recomendaciones hr {        
+        width: 90%;
+    }
+
+    .titulo-pagina {        
+        align-self: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .contenido-principal {
+        margin-top: 0;
+    }
+
+    .contenido-recomendaciones {
+        margin: 0 0.5rem;
+        text-align: center;
+    }
+
+    .titulo-pagina {
+        margin: 0 1rem;
+        align-self: center;
+    }
+
+    .titulo-pagina {        
+        align-self: center;
+    }
+
+}

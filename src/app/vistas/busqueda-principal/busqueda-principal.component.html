@@ -1,0 +1,4 @@
+<main *ngIf="recomendaciones" class="contenido-principal">
+    <readapp-barra-de-busqueda (nuevaBusqueda)="crearFiltroBusqueda($event)"></readapp-barra-de-busqueda>
+    <readapp-grilla-recomendaciones  [recomendaciones]="recomendaciones" [usuario]="usuarioLogueado" [filtroBusqueda]="filtroBusqueda" (recomendacionEliminada)="hayRecomendacionEliminada($event)"></readapp-grilla-recomendaciones>
+</main>

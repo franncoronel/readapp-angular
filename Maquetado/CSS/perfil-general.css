@@ -1,0 +1,156 @@
+/*
+  CORRECCIONES:
+  Elementos de navegación del perfil deberían ser botones
+  Poder hacer click en la foto, al costado, etc...
+*/
+
+/* Esta hoja de estilos toca todo lo referido a perfil de usuario sin contar el contenido central de la página. Es 
+decir modifica cualqueir etiqueta/clase/id que no este contenido en el article con clase .contenido-pestaña. Con excepcion
+de el titulo de vista y el contenedor de botones que si se estilan en esta hoja.
+Los estilos particulares de cada pestaña estaran en estilo-perfil-NOMBRE_DE_LA_PESTAÑA*/
+
+/* Afecta a toda la pantalla */
+.contenedor-principal {
+  height: auto;
+  min-height: 600px;
+  margin: 2rem 0.5rem 0 0.5rem;
+  display: flex;
+}
+
+.contenedor-principal hr {
+  background-color: black;
+  height: 0.01em;
+  border: none;
+}
+
+/* Sección aside/sidebar */
+
+.contenedor-nav-perfil {
+  width: 25%;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+  gap: 1rem;
+}
+
+.contenedor-nav-perfil-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contenedor-nav-perfil-usuario hr {
+  width: 80%;
+}
+
+.contenedor-nav-perfil-usuario-foto {
+  width: 10rem;
+  height: 10rem;
+  cursor: pointer;
+}
+
+.contenedor-pestaña {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.activa {
+  font-weight: bold;
+}
+
+.pestaña {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.pestaña-imagen {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.titulo-vista {
+  font-size: 3rem;
+}
+
+/* Sección botones */
+
+.contenedor-botones {
+  height: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin: 1rem 2em 1rem 0;
+}
+
+/* Estilos para tablets (ancho entre 401px y 768px) */
+@media (min-width: 401px) and (max-width: 768px) {
+  .contenedor-principal {
+    height: auto;
+    /* font-size: 14px; */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 1rem;
+    gap: 1.5em;
+  }
+
+  .contenedor-nav-perfil {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .contenedor-nav-perfil-usuario {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .contenedor-nav-perfil-usuario hr {
+    width: 100%;
+  }
+
+  .contenedor-botones {
+    margin-right: 1em;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Estilos para celulares (máximo 400px) */
+@media (max-width: 400px) {
+  .contenedor-principal {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 1.5rem 1.5rem 0 1.5rem;
+    gap: 1em;
+    height: auto;
+  }
+
+  .contenedor-nav-perfil {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .contenedor-nav-perfil-usuario {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .contenedor-botones {
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+
+  .titulo-vista {
+    width: 100%;
+    text-align: justify; /* Alinea el texto al centro */
+  }
+}

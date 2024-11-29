@@ -1,0 +1,12 @@
+<h2 class="titulo">
+  Valoraciones<img src="star-black.svg" />
+  <em *ngIf="recomendacion">{{recomendacion.puntaje}} / 5</em>
+  <!-- Usamos *ngIf para asegurarnos de que recomendacion está definida antes de invocar promedioValoraciones(),
+  evitando errores de acceso a propiedades de objetos indefinidos durante la fase de renderizado inicial y el test no rompa. -->
+</h2>
+<section class="grilla-valoraciones">
+  @for (valoracion of valoraciones; track valoracion) {
+  <readapp-tarjeta-valoracion [valoracion]="valoracion"></readapp-tarjeta-valoracion>
+  }
+  <readapp-boton-agregar *ngIf="mostrarBoton" [routerLink]="['/nueva-valoracion', recomendacion.id]"></readapp-boton-agregar>
+</section>

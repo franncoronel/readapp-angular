@@ -1,0 +1,33 @@
+.contenedor-busqueda-de-libros {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grilla-de-libros {
+  box-sizing: border-box;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw;
+}
+
+/* Estilos para tablets (ancho entre 401px y 768px) */
+@media (max-width: 768px) {
+  .grilla-de-libros {
+    grid-template-columns: 1fr;
+    gap: 3vw;
+  }
+}
+
+/* Estilos para celulares (máximo 400px) */
+@media (max-width: 400px) {
+  .contenedor-busqueda-de-libros {
+    margin-bottom: 6rem;
+  }
+
+  .grilla-de-libros {
+    gap: 3vw;
+  }
+}

@@ -1,0 +1,16 @@
+.alerta {
+  margin:2px;
+  padding: 2px;
+  background-color: var(--color-cuaternario);
+  color: black;
+  border-radius: 2px;
+  border: 0.1rem solid black;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.alerta > * {
+  text-align: center;
+}

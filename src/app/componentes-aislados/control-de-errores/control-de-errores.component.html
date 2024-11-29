@@ -1,0 +1,7 @@
+@if (elementoDeDominio.tieneErrores(campo)) {
+  <div class="alerta">
+    <div [attr.data-testid]="'error-de-' + campo" class="validacion">
+      {{elementoDeDominio.erroresDe(campo)}}
+    </div>
+  </div>
+}

@@ -1,0 +1,87 @@
+.contenedor-header {
+  background-color: var(--color-primario);
+  height: 5rem;
+  color: #ffffff;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenedor-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.logo {
+  color: var(--color-secundario);
+  width: 2rem;
+  margin-right: 0.3rem;
+}
+
+.contenedor-usuario {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1rem;
+  margin: 0 1rem 0 0;
+  cursor: pointer;
+}
+
+.hamburguesa {
+  display: none;
+}
+
+.contenedor-usuario-miniatura {
+  height: 3rem;
+  width: 3rem;
+  margin: 0 0.2rem 0 0;
+  border: 0.1rem solid var(--color-cuaternario);
+  border-radius: 50%;
+}
+
+/* Estilos para tablets (ancho entre 401px y 768px) */
+@media (min-width: 401px) and (max-width: 768px) {
+  .contenedor-usuario {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;
+  }
+}
+
+/* Estilos para celulares (máximo 400px) */
+@media (max-width: 400px) {
+  .contenedor-header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  }
+
+  .contenedor-usuario {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;
+  }
+}
