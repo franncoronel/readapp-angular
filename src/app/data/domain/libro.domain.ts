@@ -50,7 +50,7 @@ export class Libro {
   }
 }
 
-type Autor = {
+export type Autor = {
   nombre : string,
   apellido : string
 }
