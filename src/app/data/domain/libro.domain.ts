@@ -50,7 +50,9 @@ export class Libro {
   }
 }
 
-export type Autor = {
-  nombre : string,
-  apellido : string
+export class Autor {
+  constructor (
+    public nombre : string,
+    public apellido : string
+  ) {}  
 }

@@ -1,4 +1,4 @@
-import { Autor, LibroDTO } from "../domain/libro.domain"
+import { LibroDTO } from "../domain/libro.domain"
 import { RecomendacionDTO } from "../domain/recomendacion.domain"
 
 const autor1 = new Autor("Julio", "Cortazar")
